@@ -1,0 +1,62 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Theory:
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+==========
+What is React?
+==========
+React is Declarative:
+----------
+React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.
+
+React is Component-Based: (Main)
+----------
+Build encapsulated components that manage their own state, then compose them to make complex UIs. Examples of components are: Header, Footer, Navigation, Sidebar, etc. It helps our code to stay organised and scalable.
+There are two types of components:
+1. Class components
+2. Functional components
+
+==========
+SPA:
+==========
+A SPA or single-page application is a web application or website that interacts with the user by dynamically rewriting the current web page with new data from the web server, instead of the default method of a web browser loading entire new pages.
+
+Learn Once, Write Anywhere:
+----------
+You can develop new features in React without rewriting existing code.
+
+==========
+Data Flow:
+==========
+React has a uni directional Data flow. This means is that data can only be passed from a parent component to it's child component and not the other way around. Sibling components can also not share data.
+To overcome this we can either put all the data needed in the parent component beforehand or use Context API or any state management library like Redux.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+File Structure: [F -> Folder; f -> file]
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+==========
+F: node_modules:
+==========
+Never touch. This folder is depemdent on package.json file. Whnever we need to install somethisng, we use "npm install <Module name>" and that module file or folder is installed here as well as the details are stored in the package.json file.
+
+==========
+F: public:
+==========
+It has a main file called "index.html" which has a div element with id "root". All the files inside the src file are compiled and get served inside that div element with id="root".
+
+==========
+F: src:
+==========
+It contains all of our code.
+
+==========
+f: package.json:
+==========
+It has all the information about the app, it's version, it's homepage when deployed, it's dependencies (modules installed) and it's scripts.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+COMMANDS:
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+1. Create a react application:
+> npx create-react-app my-app [Creates the app]
+> cd my-app [Goes to the app directory]
+> npm start [Starts the development server]
