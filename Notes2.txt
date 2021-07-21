@@ -30,6 +30,28 @@ Data Flow:
 React has a uni directional Data flow. This means is that data can only be passed from a parent component to it's child component and not the other way around. Sibling components can also not share data.
 To overcome this we can either put all the data needed in the parent component beforehand or use Context API or any state management library like Redux.
 
+==========
+Props:
+==========
+Properties or props are a simple way to transfer  the information from one component(parent) to another component(child).
+
+==========
+State:
+==========
+State is a central place where we put all of our variables, all the things that we require and there is a proper way to update that state. 
+We always update State through proper channels or way. Never update anython in the state directly.
+Whenever state is changed, React re-renders that component.
+
+==========
+Webpack:
+==========
+Bundler that converts your source code into production-ready output.
+
+==========
+Babel:
+==========
+A JavaScript transpiler to converts modern JavaScript into a production-ready version that's compatible with all browsers.
+
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 File Structure: [F -> Folder; f -> file]
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
