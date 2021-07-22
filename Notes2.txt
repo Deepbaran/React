@@ -41,6 +41,37 @@ State:
 State is a central place where we put all of our variables, all the things that we require and there is a proper way to update that state. 
 We always update State through proper channels or way. Never update anython in the state directly.
 Whenever state is changed, React re-renders that component.
+So, state is basically a place where evrything is stored, so that every update  goes through the state.
+
+==========
+Context API:
+==========
+Context provides a way to pass data through the component tree without having to pass props down manually at every level. People prefer Context API or Redux because it keeps the data and the business logicseparate. Context centralizes the data. And it is used for better state management.
+
+* createContext(): Used to create a Context API.
+
+* Provider: Provider has a value involved. Provider provaides that value for a Consumer to consume.
+
+* Consumer: Consumer consumes the value provided by the Provider.
+
+Proper way to use the Context API is to use it by implementing Reducer and Action. Context API with Reducer and Actions is basically the brain of the Application. Try to define it first. It is the business logic and keeps it separate.
+
+* Reducer: Reducer defines what the App should do when it gets a particular action from the Action file. It contains functions/methods based on the Action that it receives.
+
+* Action: Action is the place where we define what we want to do with our application.
+
+* Dispatch: ???
+
+* useContext(): ???
+
+Every action always has two things:
+1. type: It defines what it should do with it. basically the value that we assigned to it in the Action file.
+2. payload: It is the information that it carries along with it.
+
+==========
+Fragment:
+==========
+Fragment is a container in React and can act as a substitute of div in grouping elements.
 
 ==========
 Keys: [https://reactjs.org/docs/lists-and-keys.html#keys]
