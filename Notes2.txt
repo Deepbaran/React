@@ -79,6 +79,11 @@ Keys: [https://reactjs.org/docs/lists-and-keys.html#keys]
 Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity.
 
 ==========
+useEffect():
+==========
+By using this Hook, you tell React that your component needs to do something after render.
+
+==========
 Webpack:
 ==========
 Bundler that converts your source code into production-ready output.
@@ -118,3 +123,10 @@ COMMANDS:
 > npx create-react-app my-app [Creates the app]
 > cd my-app [Goes to the app directory]
 > npm start [Starts the development server]
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Tips:
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+> Keep data and business logic separate.
+> Use functionalities and components in different folders rather than putting everything in a single file.
+> Use Context API to centralize the data and use Reducer and Actions while implementing Context API.
