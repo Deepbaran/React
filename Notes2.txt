@@ -132,3 +132,4 @@ Tips:
 > Keep data and business logic separate.
 > Use functionalities and components in different folders rather than putting everything in a single file.
 > Use Context API to centralize the data and use Reducer and Actions while implementing Context API.
+> For free JSON hosting temporarily got to myjson
