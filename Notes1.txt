@@ -71,6 +71,8 @@ React Components let you break up the UI into separate pieces that can then be r
 ** State :
 * State is an object. State is basically the values that we define inside the component. Unlike props whre properties are sent as arguments and cannot be reset, properties in state are defined in the component (in the constructor for Class component and using Hooks for Functional Component) so they can be reset. So, state is mutable. Although we can create state outside constructor too in case of Class components, but creating it inside a constructor is considered good practice.
 
+* Maintains internal data for the React component.
+
 * Important Points : 
 - State is managed within the component
 - State can be changed (mutable)
@@ -126,6 +128,7 @@ react-router
 3) route
 4) router
 - Use the 'exact' property in the <Route></Route> element. It is a boolean element. When tru, will only match if the path matches the location or pathname exactly.
+- Router gives us routing at a central control point.
 -------------------------------------------------------
 ** lifeCycle : 
 (Refer to 'https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/' and 'lifeCycle-methods.png' for a better visualization)
@@ -204,6 +207,7 @@ It is very useful.
 Context API helps in passing data without props.
 ------------------------------------------------------ 
 ** Higher Order Component : 
+A higher-order component is one that takes another component as an input. The idea is to treat the component like a function. Have one component as input, and then output an entirely new component based on that input, with new properties, methods, and/or JSX.
 HOC is an advanced technique in React for reusing component logic. HOCs are not part of the React API. They are a pattern that emerges from React's compositional nature.
 Concretely, a HOC is a function that takes a component and returns a new component.
 Syntax : 
