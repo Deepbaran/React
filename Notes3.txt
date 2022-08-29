@@ -1,0 +1,57 @@
+++++++++++++++++++++++++++++++++
+Personal Notes:
+++++++++++++++++++++++++++++++++
+- npm: npm stands for node package manager. It is used to manage packages.
+- Webpack: A bundler for javascript and friends. A bundler for javascript and friends. Packs many modules into a few bundled assets. Code Splitting allows to load parts for the application on demand. Through "loaders" modules can be CommonJs, AMD, ES6 modules, CSS, Images, JSON, Coffeescript, LESS, ... and your custom stuff. Webpack is grouped under "JS Build Tools / JS Task Runners". "Most powerful bundler", "Built-in dev server with livereload" and "Can handle all types of assets" are the primary reasons why Webpack is favored.
+- Babel: Use next generation JavaScript, today. Babel will turn your ES6+ code into ES5 friendly code, so you can start using it right now without waiting for browser support. Babel can be classified as a tool in the "JavaScript Compilers" category. "Modern Javascript works with all browsers", "Open source" and "Integration with lots of tools" are the key factors why developers consider Babel. Babe makes it possible for older browsers to run new JS syntax. {We can think of Babel as a big implementation of polyfills}
+- Transpiler: A source-to-source translator, source-to-source compiler (S2S compiler), transcompiler, or transpiler is a type of translator that takes the source code of a program written in a programming language as its input and produces an equivalent source code in the same or a different programming language. Babel is a JavaScript transpiler, meaning it converts a newer version of ECMAScript, such as ES9, to a standard version (ES5).
+- Compiler vs Transpiler: A compiler is a software that converts high-level language to low-level assembly language and we are all quite familiar with its name and work. A transpiler is another software, sometimes called a source-to-source compiler, which converts a high-level language to another high-level language.
+
+Re-render:
+-----------
+State Change -> Compute Diff -> Re-render
+
+DOM:
+----------
+Document - HTML Document
+Object - elements like h1, head, body. These are objects in document api.
+Model - Complete Document or the Complete HTML structure.
+
+Event Handling: [They all take callbacks]
+---------------
+- onClick
+- onChange
+- onSubmit
+- onReset
+- onInvalid
+- onFocus
+- onBlur
+- onKeyUp
+- onKeyDown
+- onKeyPress
+- onError
+- onLoad
+- onSelect
+
+onClick={() => {
+            this.subscribe();
+          }}
+
+Notes:
+------
+- Functional Components are called stateless components as initially we could not have state in them but now with hooks that is not the case.
+- Class components are called state components as from the initial days we caould manage states in them.
+- props are IMMUTABLE. Once props are defined we cannot change them.
+- Passing props from one component and then from component, pass that prop to another component and so on is called props drilling.
+
+++++++++++++++++++++++++++++++++
+Links:
+++++++++++++++++++++++++++++++++
+1. React Docs - https://reactjs.org/docs/getting-started.html
+2. npm repo - https://www.npmjs.com/
+3. beta React docs - https://beta.reactjs.org/
+4. Redux - https://redux.js.org/
+5. React Fragment - https://reactjs.org/docs/fragments.html
+6. React rendering - https://dev.to/teo_garcia/understanding-rendering-in-react-i5i#virtualdom
+7. Strict Mode - https://reactjs.org/docs/strict-mode.html
+8. Synthetic Event - https://reactjs.org/docs/events.html
