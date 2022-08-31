@@ -7,6 +7,10 @@ Personal Notes:
 - Transpiler: A source-to-source translator, source-to-source compiler (S2S compiler), transcompiler, or transpiler is a type of translator that takes the source code of a program written in a programming language as its input and produces an equivalent source code in the same or a different programming language. Babel is a JavaScript transpiler, meaning it converts a newer version of ECMAScript, such as ES9, to a standard version (ES5).
 - Compiler vs Transpiler: A compiler is a software that converts high-level language to low-level assembly language and we are all quite familiar with its name and work. A transpiler is another software, sometimes called a source-to-source compiler, which converts a high-level language to another high-level language.
 
+React Component:
+----------------
+- It is a reusable piece of code which can be reused at any point. It has its own inputs, its own outputs and it has its own functionality.
+
 Re-render:
 -----------
 State Change -> Compute Diff -> Re-render
@@ -42,7 +46,17 @@ Notes:
 - Functional Components are called stateless components as initially we could not have state in them but now with hooks that is not the case.
 - Class components are called state components as from the initial days we caould manage states in them.
 - props are IMMUTABLE. Once props are defined we cannot change them.
-- Passing props from one component and then from component, pass that prop to another component and so on is called props drilling.
+- Passing props from one component and then from component, pass that prop to another component and so on is called prop drilling.
+- To avoid prop drilling we can use context api or state management library like Redux or flux.
+- If you do not want a function to run at the time of rendering then rather than calling it, provide its reference.
+- We MUST PASS A KEY PROPS to render a LIST IN REACT. React differtiates and track the changes in the list items depending on that key.
+- To pass something from parent to child, we can pass a props. But to pass something from a child to parent we need to pass a callback so that we can use the closure concept to pass the value in the child to the parent.
+
+++++++++++++++++++++++++++++++++
+Packages:
+++++++++++++++++++++++++++++++++
+- Use this package to generate unique id for rendering lists:
+> npm i uuid4
 
 ++++++++++++++++++++++++++++++++
 Links:
