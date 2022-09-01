@@ -1,26 +1,35 @@
 import React, { Component } from "react";
 
 class AddContact extends Component {
-  state = {
-    name: "",
-    email: ""
-  };
+  // state = {
+  //   name: "",
+  //   email: ""
+  // };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "",
+      email: ""
+    };
+  }
 
   add = e => {
-    e.preventDefault(); //To prevent the page from getting reloaded after button click
+    e.preventDefault();
     if (this.state.name === "" || this.state.email === "") {
       alert("All the fields are mandatory");
       return;
     }
     this.props.addContactHandler(this.state);
-    // console.log(this.state);
-    this.setState({ name: "", email: "" }); //This will make the input fields empty once the data is added
+    this.setState({ name: "", email: "" });
+    // console.log(this.props);
+    // this.props.history.push("/"); //This does not work anymore
   };
 
   render() {
     return (
       <div className="ui main">
-        <h2>Ass Contact</h2>
+        <h2>Add Contact</h2>
         <form action="" className="ui form" onSubmit={this.add}>
           <div className="field">
             <label htmlFor="">Name</label>

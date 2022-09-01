@@ -1,35 +1,24 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { v4 } from "uuid";
 import "./App.css";
 import Header from "./Header";
 import AddContact from "./AddContact";
 import ContactList from "./ContactList";
+import ContactDetail from "./ContactDetail";
 
 function App() {
-  // const contacts = [
-  //   {
-  //     id: "1",
-  //     name: "Deep",
-  //     email: "deep@gmail.com"
-  //   },
-  //   {
-  //     id: "2",
-  //     name: "Baran",
-  //     email: "baran@gmail.com"
-  //   }
-  // ];
   const LOCAL_STORAGE_KEY = "contacts";
-  const [contacts, setContacts] = useState([]);
-  //useState will have what will be the initial value of the state contacts, which is defined as empty array here.
-  //To change it's value we will use setContacts
+  //With this code we are checking if there is anything stored in the localStorage or not.
+  //If there is something stored then that will be set as contacts state after page refresh and if nothing is there then empty array will assigned.
+  const savedContacts = localStorage.getItem(LOCAL_STORAGE_KEY)
+    ? JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+    : [];
+
+  const [contacts, setContacts] = useState(savedContacts);
 
   const addContactHandler = contact => {
-    console.log(contact);
-    //update the state
     setContacts([...contacts, { id: v4(), ...contact }]);
-    //setContacts(All the previous values, new value)
-    //We add all the previous values in setState otherwise we will lose the previous values once the state gets updated.
-    //As containers is initialized as an empty array using useState, so always pass an array to setState
   };
 
   const removeContactHandler = id => {
@@ -37,36 +26,50 @@ function App() {
     setContacts(newContactList);
   };
 
-  //To store the data/persist the data once a change occurs, we will use the local storage.
-  //So, when the value changes, useEffect helps to render the component again.
-  //It takes a callback and dependenciesas an array.
-  //Dependencies are nothing but the states and if those states change then useEffect helps in rendering the components.
-  //useEffect will run the callback as soon as the dependencies change.
-
-  //load the data stored in the localStorage when needed to re-render the components
-  useEffect(() => {
-    const retrievedContacts = JSON.parse(
-      localStorage.getItem(LOCAL_STORAGE_KEY)
-    ); //Parding the JSON string
-    if (retrievedContacts.length > 0) setContacts([...retrievedContacts]);
-  }, []); //Keeping the dependencies as empty because we want this to run whenever the component gets mounted
+  // useEffect(() => {
+  //   const retrievedContacts = JSON.parse(
+  //     localStorage.getItem(LOCAL_STORAGE_KEY)
+  //   );
+  //   console.log(retrievedContacts);
+  //   if (retrievedContacts) setContacts([...retrievedContacts]);
+  // }, []);
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
-    //localStorage takes a key-value pair.
-    //We need to pass the value as a String. So we converted the contacts array to a JSON string.
   }, [contacts]);
 
   return (
-    <div>
-      <Header />
-      <AddContact addContactHandler={addContactHandler} />
-      <ContactList contacts={contacts} getContactId={removeContactHandler} />
+    <div className="ui container">
+      <Router>
+        <Header />
+        <Routes>
+          <Route
+            path="/add"
+            element={<AddContact addContactHandler={addContactHandler} />}
+          />
+          <Route
+            path="/"
+            element={
+              <ContactList
+                contacts={contacts}
+                getContactId={removeContactHandler}
+              />
+            }
+          />
+          <Route path="/contact/:id" element={<ContactDetail />} />
+          {/*We need to put all components in Route that are going to be used with some react-router-dom method so that react-router can track them.*/}
+          {/* This path thakes the id parameter */}
+        </Routes>
+        {/* <AddContact addContactHandler={addContactHandler} /> */}
+        {/* <ContactList contacts={contacts} getContactId={removeContactHandler} /> */}
+      </Router>
     </div>
   );
 }
 
 export default App;
 
-//<Header />
-//<Header> props.children </Header>
+//React internally uses React.createElement in order to create a component.
+//So, each time we visit the route or url to a particular component React re-renders that component every time using React.createElemetn.
+//This will cause a performance issue. Because we just want to update the component which is created once. We do not want to create the component everytime.
+//That's why we use the render prop to pass the props to the components in route.

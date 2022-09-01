@@ -48,7 +48,7 @@ function App() {
     const retrievedContacts = JSON.parse(
       localStorage.getItem(LOCAL_STORAGE_KEY)
     ); //Parding the JSON string
-    if (retrievedContacts.length > 0) setContacts([...retrievedContacts]);
+    if (retrievedContacts) setContacts([...retrievedContacts]);
   }, []); //Keeping the dependencies as empty because we want this to run whenever the component gets mounted
 
   useEffect(() => {
@@ -58,7 +58,7 @@ function App() {
   }, [contacts]);
 
   return (
-    <div>
+    <div className="ui container">
       <Header />
       <AddContact addContactHandler={addContactHandler} />
       <ContactList contacts={contacts} getContactId={removeContactHandler} />
