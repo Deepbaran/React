@@ -122,6 +122,9 @@ Packages:
 - Install Axios:
 > npm i --save axios
 
+- Install all packages depending on the package.json:
+> npm install
+
 ++++++++++++++++++++++++++++++++
 Links:
 ++++++++++++++++++++++++++++++++
